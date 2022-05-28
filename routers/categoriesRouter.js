@@ -1,10 +1,11 @@
 import {Router} from 'express';
-import { novaCategoria } from '../Controllers/categoriesController.js';
-
+import { getCategories, newCategory } from '../controllers/categoriesController.js';
+import { validateCategory } from '../middlewares/categoriesMidleware.js';
 
 const categoriesRouter = new Router();
 
-categoriesRouter.post('/categories', novaCategoria);
+categoriesRouter.get('/categories', getCategories);
+categoriesRouter.post('/categories',validateCategory, newCategory);
 
 
 export default categoriesRouter;
