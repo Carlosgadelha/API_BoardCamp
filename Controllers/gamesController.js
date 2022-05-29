@@ -1,5 +1,4 @@
 import database from "../database.js";
-import joi from 'joi';
 
 export async function newGame(req, res) {
 
